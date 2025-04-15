@@ -1,11 +1,24 @@
 {
     "Title": "Campus Life on the West Side", 
     "Credits": "Created by Adam Smith (amsmith@ucsc.edu).", 
-    "InitialLocation": "Kresge",
+    "InitialLocation": "Kresge Dorm",
     "Locations": {
+        "Kresge Dorm": {
+            "Body": "This is Kresge Dorm, I've never been there so I don't know what it's like.",
+            "Choices": [
+                {
+                    "Text": "Outside",
+                    "Target": "Kresge"
+                }
+            ]
+        },
         "Kresge": {
             "Body": "This is Kresge College, lots of nice trees.",
             "Choices": [
+                {
+                    "Text": "Go Inside",
+                    "Target": "Kresge Dorm"
+                },
                 {
                     "Text": "South",
                     "Target": "Porter"
