@@ -1,10 +1,10 @@
 //filename: Game 1 Link-based world 
 
-//pull test, push from pc1, pull from pc2
+//pull test, push from pc2, pull from pc1
 class Start extends Scene {
     create() {
         this.engine.setTitle(this.engine.storyData.Title); // done
-        this.engine.addChoice("Begin the story");
+        this.engine.addChoice("Wake up...");
     }
 
     handleChoice() {

@@ -1,49 +1,57 @@
-{
-    "Title": "Campus Life on the West Side", 
-    "Credits": "Created by Adam Smith (amsmith@ucsc.edu).", 
-    "InitialLocation": "Kresge Dorm",
+{   
+    "Title": "School Day", 
+    "Credits": "Created by Adam Smith (amsmith@ucsc.edu). Edited by Wade Xu (wxu78@ucsc.edu)", 
+    "InitialLocation": "Bedroom",
     "Locations": {
-        "Kresge Dorm": {
-            "Body": "This is Kresge Dorm, I've never been there so I don't know what it's like.",
+        "Dressing Room": {
+            "Body": "This is your dressing room, do you want to change your clothes?",
             "Choices": [
                 {
-                    "Text": "Outside",
-                    "Target": "Kresge"
+                    "Text": "Leave",
+                    "Target": "Bedroom"
                 }
             ]
         },
-        "Kresge": {
-            "Body": "This is Kresge College, lots of nice trees.",
+        "Bedroom": {
+            "Body": "This is your bedroom, warm and cozy. But you have to go to school so you can't stay here any longer.",
             "Choices": [
                 {
-                    "Text": "Go Inside",
-                    "Target": "Kresge Dorm"
+                    "Text": "Change clothes?",
+                    "Target": "Dressing Room"
                 },
                 {
-                    "Text": "South",
-                    "Target": "Porter"
-                }
-            ]
-        },
-        "Porter": {
-            "Body": "This is Porter College, the trees are nice here too.",
-            "Choices": [
-                {
-                    "Text": "North",
-                    "Target": "Kresge"
+                    "Text": "Bed?",
+                    "Target": "BE"
                 },
                 {
-                    "Text": "South",
-                    "Target": "Rachel Carson"
+                    "Text": "Go Out",
+                    "Target": "Corridor"
                 }
             ]
         },
-        "Rachel Carson": {
-            "Body": "Rachel Carson College, more sun and fewer trees.",
+        "Corridor": {
+            "Body": "This is the second floor hallway of your house. Stop standing there and go out.",
             "Choices": [
                 {
-                    "Text": "North",
-                    "Target": "Porter"
+                    "Text": "Go Back",
+                    "Target": "Bedroom"
+                },
+                {
+                    "Text": "Bathroom",
+                    "Target": "Bathroom"
+                },
+                {
+                    "Text": "Go Down",
+                    "Target": "Living Room"
+                }
+            ]
+        },
+        "Bathroom": {
+            "Body": "This is your bathroom, just for you.",
+            "Choices": [
+                {
+                    "Text": "Go Back",
+                    "Target": "Corridor"
                 },
                 {
                     "Text": "South",
@@ -65,7 +73,10 @@
             ]
         },
         "Beyond": {
-            "Body": "Grass, don't forget to check for ticks!"
+            "Body": "You caught the last bus that could get you to class on time, you were not late!"
+        },
+        "BE": {
+            "Body": "The bed is so warm and comfortable, it won't blame you or humiliate you. Then, you are not late, you are absent from class."
         }
     }
 }
