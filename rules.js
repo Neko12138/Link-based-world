@@ -14,11 +14,15 @@ class Start extends Scene {
 
 class Location extends Scene {
     create(key) {
+        this.key = key;
         let locationData = this.engine.storyData.Locations[key]; //done
         this.engine.show(locationData.Body);// done
         
         if(locationData.Choices && locationData.Choices.length > 0) { //done
             for(let choice of locationData.Choices) { //done
+                if (key === "Entrance" && choice.Text === "Open The Door") {
+                    if (this.engine.storyData.houseKey !== 1) continue;
+                }
                 this.engine.addChoice(choice.Text, choice);// not really done, but work
             }
         } else {
@@ -28,6 +32,18 @@ class Location extends Scene {
 
     handleChoice(choice) {
         if(choice) {
+            if (choice.Action === "jumpCouch") {
+                if (this.engine.storyData.houseKey === 0) {
+                    // first time
+                    this.engine.show("The sofa is very springy and it bounces you up. And the key is also bounced up. Who put it there?");
+                    this.engine.storyData.houseKey = 1; // houseKey 1
+                } else if (this.engine.storyData.houseKey === 1) {
+                    // second time
+                    this.engine.show("You jump on it again and it bounces you back up. It's so much fun, but you still have to remember to go to class.");
+                }
+                this.create(this.key);
+                return;
+            }
             this.engine.show("&gt; "+choice.Text);
             this.engine.gotoScene(Location, choice.Target); //move to target
         } else {

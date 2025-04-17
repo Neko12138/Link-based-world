@@ -2,6 +2,7 @@
     "Title": "School Day", 
     "Credits": "Created by Adam Smith (amsmith@ucsc.edu). Edited by Wade Xu (wxu78@ucsc.edu)", 
     "InitialLocation": "Bedroom",
+    "houseKey": 0,
     "Locations": {
         "Dressing Room": {
             "Body": "This is your dressing room, do you want to change your clothes?",
@@ -52,22 +53,48 @@
                 {
                     "Text": "Go Back",
                     "Target": "Corridor"
-                },
-                {
-                    "Text": "South",
-                    "Target": "Oakes"
                 }
             ]
         },
-        "Oakes": {
-            "Body": "Oakes College, even the buildings have tree bark on them.",
+        "Living Room": {
+            "Body": "A living room that is just for you, not big, but with all the necessary furniture.",
             "Choices": [
                 {
-                    "Text": "North",
-                    "Target": "Rachel Carson"
+                    "Text": "Go Out",
+                    "Target": "Entrance"
                 },
                 {
-                    "Text": "South",
+                    "Text": "Go Up",
+                    "Target": "Corridor"
+                },
+                {
+                    "Text": "Jump on the couch!",
+                    "Action": "jumpCouch"
+                },
+                {
+                    "Text": "Kitchen",
+                    "Target": "Kitchen"
+                }
+            ]
+        },
+        "Kitchen": {
+            "Body": "The kitchen, you use it often, but it is clean now.",
+            "Choices": [
+                {
+                    "Text": "Go Back",
+                    "Target": "Living Room"
+                }
+            ]
+        },
+        "Entrance": {
+            "Body": "The entrance is where your shoes and umbrella are. Don't forget to check if you have your keys before you go out.",
+            "Choices": [
+                {
+                    "Text": "Go Back",
+                    "Target": "Living Room"
+                },
+                {
+                    "Text": "Open The Door",
                     "Target": "Beyond"
                 }
             ]
