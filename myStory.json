@@ -69,7 +69,9 @@
                 },
                 {
                     "Text": "Jump on the couch!",
-                    "Action": "jumpCouch"
+                    "Action": "jumpCouch",
+                    "SP_Text1": "The sofa is very springy and it bounces you up. And the key is also bounced up. Who put it there?",
+                    "SP_Text2": "You jump on it again and it bounces you back up. It's so much fun, but you still have to remember to go to class."
                 },
                 {
                     "Text": "Kitchen",

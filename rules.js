@@ -34,11 +34,11 @@ class Location extends Scene {
             if (choice.Action === "jumpCouch") {
                 if (this.engine.storyData.houseKey === 0) {
                     // first time
-                    this.engine.show("The sofa is very springy and it bounces you up. And the key is also bounced up. Who put it there?");
+                    this.engine.show(choice.SP_Text1);
                     this.engine.storyData.houseKey = 1; // houseKey 1
                 } else if (this.engine.storyData.houseKey === 1) {
                     // second time
-                    this.engine.show("You jump on it again and it bounces you back up. It's so much fun, but you still have to remember to go to class.");
+                    this.engine.show(choice.SP_Text2);
                 }
                 this.create(this.key);
                 return;
