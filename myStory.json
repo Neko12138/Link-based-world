@@ -41,7 +41,7 @@
             "Body": "This is the second floor hallway of your house. Stop standing there and go out.",
             "Choices": [
                 {
-                    "Text": "Go Back",
+                    "Text": "Bedroom",
                     "Target": "Bedroom"
                 },
                 {
@@ -49,7 +49,7 @@
                     "Target": "Bathroom"
                 },
                 {
-                    "Text": "Go Down",
+                    "Text": "First Floor",
                     "Target": "Living Room"
                 }
             ]
@@ -71,7 +71,7 @@
                     "Target": "Entrance"
                 },
                 {
-                    "Text": "Go Up",
+                    "Text": "Secound Floor",
                     "Target": "Corridor"
                 },
                 {
