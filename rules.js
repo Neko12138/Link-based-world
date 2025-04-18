@@ -19,9 +19,10 @@ class Location extends Scene {
         
         if(locationData.Choices && locationData.Choices.length > 0) { //done
             for(let choice of locationData.Choices) { //done
-                if (key === "Entrance" && choice.Text === "Open The Door") {
-                    if (this.engine.storyData.houseKey !== 1) continue;
+                if (choice.Door === 1 && this.engine.storyData.changeCloths !== 1) {
+                    continue; // don't show the choice
                 }
+                
                 this.engine.addChoice(choice.Text, choice);// not really done, but work
             }
         } else {
@@ -32,17 +33,24 @@ class Location extends Scene {
     handleChoice(choice) {
         if(choice) {
             if (choice.Action === "jumpCouch") {
-                if (this.engine.storyData.houseKey === 0) {
+                if (this.engine.storyData.jumpTimes === 0) {
                     // first time
                     this.engine.show(choice.SP_Text1);
-                    this.engine.storyData.houseKey = 1; // houseKey 1
-                } else if (this.engine.storyData.houseKey === 1) {
+                    this.engine.storyData.jumpTimes = 1; // houseKey 1
+                } else if (this.engine.storyData.jumpTimes === 1) {
                     // second time
                     this.engine.show(choice.SP_Text2);
                 }
                 this.create(this.key);
                 return;
             }
+            if (choice.Key === 1) {
+                this.engine.storyData.changeCloths = 1;
+                if (choice.clothesText) {
+                    this.engine.show(choice.clothesText);
+                }
+            }
+            
             this.engine.show("&gt; "+choice.Text);
             this.engine.gotoScene(Location, choice.Target); //move to target
         } else {

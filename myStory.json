@@ -2,7 +2,8 @@
     "Title": "School Day", 
     "Credits": "Created by Adam Smith (amsmith@ucsc.edu). Edited by Wade Xu (wxu78@ucsc.edu)", 
     "InitialLocation": "Bedroom",
-    "houseKey": 0,
+    "jumpTimes": 0,
+    "changeCloths": 0,
     "Locations": {
         "Dressing Room": {
             "Body": "This is your dressing room, do you want to change your clothes?",
@@ -10,6 +11,12 @@
                 {
                     "Text": "Leave",
                     "Target": "Bedroom"
+                },
+                {
+                    "Text": "Change Clothes",
+                    "Key": 1,
+                    "Target": "Dressing Room",
+                    "clothesText": "You are change clothes."
                 }
             ]
         },
@@ -70,7 +77,8 @@
                 {
                     "Text": "Jump on the couch!",
                     "Action": "jumpCouch",
-                    "SP_Text1": "The sofa is very springy and it bounces you up. And the key is also bounced up. Who put it there?",
+                    "GivesKey": "houseKey",
+                    "SP_Text1": "The sofa is very springy and it bounces you up.",
                     "SP_Text2": "You jump on it again and it bounces you back up. It's so much fun, but you still have to remember to go to class."
                 },
                 {
@@ -89,7 +97,7 @@
             ]
         },
         "Entrance": {
-            "Body": "The entrance is where your shoes and umbrella are. Don't forget to check if you have your keys before you go out.",
+            "Body": "The entrance is where your shoes and umbrella are. Don't forget to change into appropriate clothes before going out, your keys are also in that pocket.",
             "Choices": [
                 {
                     "Text": "Go Back",
@@ -97,7 +105,8 @@
                 },
                 {
                     "Text": "Open The Door",
-                    "Target": "Beyond"
+                    "Target": "Beyond",
+                    "Door": 1
                 }
             ]
         },
